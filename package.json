@@ -1,0 +1,13 @@
+{
+  "name": "tree-sitter-vcl",
+  "version": "1.0.0",
+  "main": "bindings/node",
+  "author": "Hiroaki ITO <mail@isudzumi.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "tree-sitter-cli": "^0.20.1"
+  },
+  "dependencies": {
+    "nan": "^2.15.0"
+  }
+}
