@@ -1,11 +1,101 @@
 [
   {
-    "type": "source_file",
+    "type": "builtin_action",
     "named": true,
     "fields": {}
   },
   {
-    "type": "hello",
+    "type": "program",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "subroutine",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "statement_block",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "subroutine",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "builtin_action",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "statement_block",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "sub",
+    "named": false
+  },
+  {
+    "type": "vcl_deliver",
+    "named": false
+  },
+  {
+    "type": "vcl_error",
+    "named": false
+  },
+  {
+    "type": "vcl_fetch",
+    "named": false
+  },
+  {
+    "type": "vcl_hash",
+    "named": false
+  },
+  {
+    "type": "vcl_hit",
+    "named": false
+  },
+  {
+    "type": "vcl_miss",
+    "named": false
+  },
+  {
+    "type": "vcl_pass",
+    "named": false
+  },
+  {
+    "type": "vcl_pipe",
+    "named": false
+  },
+  {
+    "type": "vcl_purge",
+    "named": false
+  },
+  {
+    "type": "{",
+    "named": false
+  },
+  {
+    "type": "}",
     "named": false
   }
 ]

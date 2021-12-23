@@ -1,9 +1,91 @@
 {
   "name": "vcl",
   "rules": {
-    "source_file": {
-      "type": "STRING",
-      "value": "hello"
+    "program": {
+      "type": "REPEAT",
+      "content": {
+        "type": "SYMBOL",
+        "name": "subroutine"
+      }
+    },
+    "subroutine": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "sub"
+        },
+        {
+          "type": "FIELD",
+          "name": "name",
+          "content": {
+            "type": "SYMBOL",
+            "name": "builtin_action"
+          }
+        },
+        {
+          "type": "SYMBOL",
+          "name": "statement_block"
+        }
+      ]
+    },
+    "builtin_action": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "vcl_fetch"
+        },
+        {
+          "type": "STRING",
+          "value": "vcl_hash"
+        },
+        {
+          "type": "STRING",
+          "value": "vcl_hit"
+        },
+        {
+          "type": "STRING",
+          "value": "vcl_pass"
+        },
+        {
+          "type": "STRING",
+          "value": "vcl_purge"
+        },
+        {
+          "type": "STRING",
+          "value": "vcl_pipe"
+        },
+        {
+          "type": "STRING",
+          "value": "vcl_miss"
+        },
+        {
+          "type": "STRING",
+          "value": "vcl_deliver"
+        },
+        {
+          "type": "STRING",
+          "value": "vcl_error"
+        }
+      ]
+    },
+    "statement_block": {
+      "type": "PREC_RIGHT",
+      "value": 0,
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "STRING",
+            "value": "{"
+          },
+          {
+            "type": "STRING",
+            "value": "}"
+          }
+        ]
+      }
     }
   },
   "extras": [
