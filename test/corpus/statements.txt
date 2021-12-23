@@ -1,0 +1,13 @@
+==================
+Subroutine
+==================
+
+sub vcl_fetch {
+}
+
+---
+
+(program
+  (subroutine
+    (builtin_action)
+    (statement_block)))
