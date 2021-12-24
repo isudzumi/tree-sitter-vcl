@@ -11,3 +11,16 @@ sub vcl_fetch {
   (subroutine
     (builtin_action)
     (statement_block)))
+
+==================
+Include
+==================
+
+include "foo.vcl";
+
+---
+
+(program
+  (include
+    (string)))
+
