@@ -5,6 +5,22 @@
     "fields": {}
   },
   {
+    "type": "include",
+    "named": true,
+    "fields": {
+      "filename": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "string",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "program",
     "named": true,
     "fields": {},
@@ -12,6 +28,10 @@
       "multiple": true,
       "required": false,
       "types": [
+        {
+          "type": "include",
+          "named": true
+        },
         {
           "type": "subroutine",
           "named": true
@@ -21,6 +41,11 @@
   },
   {
     "type": "statement_block",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "string",
     "named": true,
     "fields": {}
   },
@@ -49,6 +74,18 @@
         }
       ]
     }
+  },
+  {
+    "type": "\"",
+    "named": false
+  },
+  {
+    "type": ";",
+    "named": false
+  },
+  {
+    "type": "include",
+    "named": false
   },
   {
     "type": "sub",
