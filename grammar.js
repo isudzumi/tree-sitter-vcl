@@ -1,12 +1,25 @@
 module.exports = grammar({
     name: 'vcl',
     rules: {
-        program: $ => repeat($.subroutine),
+        program: $ => repeat($._statement),
+
+        _statement: $ => choice(
+          $.subroutine,
+          $.include
+        ),
 
         subroutine: $ => seq(
           'sub',
           field('name', $.builtin_action),
           $.statement_block
+        ),
+
+        _identifier: $ => /[a-z_\.]+/,
+
+        string: $ => seq(
+          '"',
+          $._identifier,
+          '"'
         ),
 
         builtin_action: $ => choice(
@@ -25,5 +38,11 @@ module.exports = grammar({
           '{',
           '}'
         )),
+
+        include: $ => seq(
+          'include',
+          field('filename', $.string),
+          ';'
+        ),
     }
 })
