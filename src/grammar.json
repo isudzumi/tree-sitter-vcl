@@ -199,6 +199,10 @@
         {
           "type": "SYMBOL",
           "name": "declare_statement"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "call_statement"
         }
       ]
     },
@@ -384,6 +388,27 @@
             "type": "SYMBOL",
             "name": "identifier"
           }
+        }
+      ]
+    },
+    "call_statement": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "call"
+        },
+        {
+          "type": "FIELD",
+          "name": "subroutine_name",
+          "content": {
+            "type": "SYMBOL",
+            "name": "identifier"
+          }
+        },
+        {
+          "type": "STRING",
+          "value": ";"
         }
       ]
     }
