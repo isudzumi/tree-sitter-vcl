@@ -9,7 +9,7 @@ sub vcl_fetch {
 
 (program
   (subroutine
-    (builtin_action)
+    name: (identifier)
     (statement_block)))
 
 ==================
@@ -21,8 +21,9 @@ include "foo.vcl";
 ---
 
 (program
-  (include
-    (string)))
+  (include_statement
+    source: (string
+      (string_fragment))))
 
 ==================
 Return
@@ -40,11 +41,11 @@ sub vcl_fetch {
 
 (program
   (subroutine
-    (builtin_action)
+    name: (identifier)
     (statement_block
       (return_statement)))
   (subroutine
-    (builtin_action)
+    name: (identifier)
     (statement_block
       (return_statement
         (action)))))
