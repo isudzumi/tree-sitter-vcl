@@ -4,6 +4,9 @@
   "main": "bindings/node",
   "author": "Hiroaki ITO <mail@isudzumi.com>",
   "license": "MIT",
+  "scripts": {
+    "test": "tree-sitter generate && tree-sitter test"
+  },
   "devDependencies": {
     "tree-sitter-cli": "^0.20.1"
   },
