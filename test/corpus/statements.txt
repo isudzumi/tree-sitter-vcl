@@ -126,3 +126,20 @@ sub vcl_fetch {
           name: (identifier))
         type: (type)))))
 
+==================
+Call
+==================
+
+sub vcl_fetch {
+  call foo_bar_subroutine;
+}
+
+---
+
+(program
+  (subroutine
+    name: (identifier)
+    (statement_block
+      (call_statement
+        subroutine_name: (identifier)))))
+
