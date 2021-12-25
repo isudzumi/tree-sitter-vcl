@@ -34,14 +34,34 @@ module.exports = grammar({
           'vcl_error'
         ),
 
+        /**
+         * @see {@link https://varnish-cache.org/docs/3.0/tutorial/vcl.html#actions}
+         */
+        action: $ => choice(
+          'pass',
+          'hit_for_pass',
+          'lookup',
+          'pipe',
+          'deliver'
+        ),
+
         statement_block: $ => prec.right(seq(
           '{',
+          optional($.return_statement),
           '}'
         )),
 
         include: $ => seq(
           'include',
           field('filename', $.string),
+          ';'
+        ),
+
+        return_statement: $ => seq(
+          'return',
+          optional(
+            seq('(', $.action, ')')
+          ),
           ';'
         ),
     }
