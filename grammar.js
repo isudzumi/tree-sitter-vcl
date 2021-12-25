@@ -63,7 +63,8 @@ module.exports = grammar({
           $.error_statement,
           $.restart_statement,
           $.esi_statement,
-          $.declare_statement
+          $.declare_statement,
+          $.call_statement
         ),
 
         include_statement: $ => seq(
@@ -112,6 +113,12 @@ module.exports = grammar({
         user_defined_variable: $ => seq(
           'var.',
           field('name', $.identifier)
+        ),
+
+        call_statement: $ => seq(
+          'call',
+          field('subroutine_name', $.identifier),
+          ';'
         ),
     }
 })
