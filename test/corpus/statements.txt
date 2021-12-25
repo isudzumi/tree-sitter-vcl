@@ -24,3 +24,28 @@ include "foo.vcl";
   (include
     (string)))
 
+==================
+Return
+==================
+
+sub vcl_fetch {
+  return;
+}
+
+sub vcl_fetch {
+  return(pass);
+}
+
+---
+
+(program
+  (subroutine
+    (builtin_action)
+    (statement_block
+      (return_statement)))
+  (subroutine
+    (builtin_action)
+    (statement_block
+      (return_statement
+        (action)))))
+
