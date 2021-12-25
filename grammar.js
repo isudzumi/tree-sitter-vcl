@@ -1,9 +1,9 @@
 module.exports = grammar({
     name: 'vcl',
     rules: {
-        program: $ => repeat($._statement),
+        program: $ => repeat($._definition),
 
-        _statement: $ => choice(
+        _definition: $ => choice(
           $.subroutine,
           $.include_statement
         ),
@@ -17,6 +17,8 @@ module.exports = grammar({
         identifier: $ => /\w+/,
 
         string_fragment: $ => /[\w\.\\\s]+/,
+
+        status_code: $ => /\d+/,
 
         string: $ => seq(
           '"',
@@ -37,9 +39,14 @@ module.exports = grammar({
 
         statement_block: $ => prec.right(seq(
           '{',
-          optional($.return_statement),
+          optional(repeat($._statement)),
           '}'
         )),
+
+        _statement: $ => choice(
+          $.return_statement,
+          $.error_statement
+        ),
 
         include_statement: $ => seq(
           'include',
@@ -54,5 +61,16 @@ module.exports = grammar({
           ),
           ';'
         ),
+
+        error_statement: $ => seq(
+          'error',
+          optional(
+            seq(
+              field('status', $.status_code),
+              optional(field('message', $.string))
+            )
+          ),
+          ';'
+        )
     }
 })
