@@ -138,6 +138,10 @@
         {
           "type": "SYMBOL",
           "name": "error_statement"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "restart_statement"
         }
       ]
     },
@@ -243,6 +247,19 @@
               "type": "BLANK"
             }
           ]
+        },
+        {
+          "type": "STRING",
+          "value": ";"
+        }
+      ]
+    },
+    "restart_statement": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "restart"
         },
         {
           "type": "STRING",

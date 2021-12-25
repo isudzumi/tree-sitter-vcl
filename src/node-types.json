@@ -66,6 +66,11 @@
     }
   },
   {
+    "type": "restart_statement",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "return_statement",
     "named": true,
     "fields": {},
@@ -90,6 +95,10 @@
       "types": [
         {
           "type": "error_statement",
+          "named": true
+        },
+        {
+          "type": "restart_statement",
           "named": true
         },
         {
@@ -186,6 +195,10 @@
   },
   {
     "type": "pipe",
+    "named": false
+  },
+  {
+    "type": "restart",
     "named": false
   },
   {
