@@ -106,3 +106,23 @@ sub vcl_fetch {
     (statement_block
       (esi_statement))))
 
+==================
+Declare
+==================
+
+sub vcl_fetch {
+  declare local var.expiry_time TIME;
+}
+
+---
+
+(program
+  (subroutine
+    name: (identifier)
+    (statement_block
+      (declare_statement
+        scope: (declare_scope)
+        (user_defined_variable
+          name: (identifier))
+        type: (type)))))
+
