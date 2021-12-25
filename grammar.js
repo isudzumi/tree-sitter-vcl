@@ -5,7 +5,7 @@ module.exports = grammar({
 
         _statement: $ => choice(
           $.subroutine,
-          $.include
+          $.include_statement
         ),
 
         subroutine: $ => seq(
@@ -51,9 +51,9 @@ module.exports = grammar({
           '}'
         )),
 
-        include: $ => seq(
+        include_statement: $ => seq(
           'include',
-          field('filename', $.string),
+          field('source', $.string),
           ';'
         ),
 
