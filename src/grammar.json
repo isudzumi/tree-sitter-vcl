@@ -104,6 +104,31 @@
         }
       ]
     },
+    "action": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "pass"
+        },
+        {
+          "type": "STRING",
+          "value": "hit_for_pass"
+        },
+        {
+          "type": "STRING",
+          "value": "lookup"
+        },
+        {
+          "type": "STRING",
+          "value": "pipe"
+        },
+        {
+          "type": "STRING",
+          "value": "deliver"
+        }
+      ]
+    },
     "statement_block": {
       "type": "PREC_RIGHT",
       "value": 0,
@@ -113,6 +138,18 @@
           {
             "type": "STRING",
             "value": "{"
+          },
+          {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "return_statement"
+              },
+              {
+                "type": "BLANK"
+              }
+            ]
           },
           {
             "type": "STRING",
@@ -135,6 +172,44 @@
             "type": "SYMBOL",
             "name": "string"
           }
+        },
+        {
+          "type": "STRING",
+          "value": ";"
+        }
+      ]
+    },
+    "return_statement": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "return"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "STRING",
+                  "value": "("
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "action"
+                },
+                {
+                  "type": "STRING",
+                  "value": ")"
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
         },
         {
           "type": "STRING",
