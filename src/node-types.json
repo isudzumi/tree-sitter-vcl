@@ -5,6 +5,42 @@
     "fields": {}
   },
   {
+    "type": "declare_statement",
+    "named": true,
+    "fields": {
+      "scope": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "declare_scope",
+            "named": true
+          }
+        ]
+      },
+      "type": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "type",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "user_defined_variable",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "error_statement",
     "named": true,
     "fields": {
@@ -99,6 +135,10 @@
       "required": false,
       "types": [
         {
+          "type": "declare_statement",
+          "named": true
+        },
+        {
           "type": "error_statement",
           "named": true
         },
@@ -159,6 +199,27 @@
     }
   },
   {
+    "type": "type",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "user_defined_variable",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "\"",
     "named": false
   },
@@ -173,6 +234,54 @@
   {
     "type": ";",
     "named": false
+  },
+  {
+    "type": "ACL",
+    "named": false
+  },
+  {
+    "type": "BACKEND",
+    "named": false
+  },
+  {
+    "type": "BOOL",
+    "named": false
+  },
+  {
+    "type": "FLOAT",
+    "named": false
+  },
+  {
+    "type": "ID",
+    "named": false
+  },
+  {
+    "type": "INTEGER",
+    "named": false
+  },
+  {
+    "type": "IP",
+    "named": false
+  },
+  {
+    "type": "RTIME",
+    "named": false
+  },
+  {
+    "type": "STRING",
+    "named": false
+  },
+  {
+    "type": "TIME",
+    "named": false
+  },
+  {
+    "type": "declare",
+    "named": false
+  },
+  {
+    "type": "declare_scope",
+    "named": true
   },
   {
     "type": "deliver",
@@ -228,6 +337,10 @@
   },
   {
     "type": "sub",
+    "named": false
+  },
+  {
+    "type": "var.",
     "named": false
   },
   {

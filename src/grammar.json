@@ -96,6 +96,55 @@
         }
       ]
     },
+    "type": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "ACL"
+        },
+        {
+          "type": "STRING",
+          "value": "BACKEND"
+        },
+        {
+          "type": "STRING",
+          "value": "BOOL"
+        },
+        {
+          "type": "STRING",
+          "value": "FLOAT"
+        },
+        {
+          "type": "STRING",
+          "value": "ID"
+        },
+        {
+          "type": "STRING",
+          "value": "INTEGER"
+        },
+        {
+          "type": "STRING",
+          "value": "IP"
+        },
+        {
+          "type": "STRING",
+          "value": "RTIME"
+        },
+        {
+          "type": "STRING",
+          "value": "STRING"
+        },
+        {
+          "type": "STRING",
+          "value": "TIME"
+        }
+      ]
+    },
+    "declare_scope": {
+      "type": "STRING",
+      "value": "local"
+    },
     "statement_block": {
       "type": "PREC_RIGHT",
       "value": 0,
@@ -146,6 +195,10 @@
         {
           "type": "SYMBOL",
           "name": "esi_statement"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "declare_statement"
         }
       ]
     },
@@ -281,6 +334,56 @@
         {
           "type": "STRING",
           "value": ";"
+        }
+      ]
+    },
+    "declare_statement": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "declare"
+        },
+        {
+          "type": "FIELD",
+          "name": "scope",
+          "content": {
+            "type": "SYMBOL",
+            "name": "declare_scope"
+          }
+        },
+        {
+          "type": "SYMBOL",
+          "name": "user_defined_variable"
+        },
+        {
+          "type": "FIELD",
+          "name": "type",
+          "content": {
+            "type": "SYMBOL",
+            "name": "type"
+          }
+        },
+        {
+          "type": "STRING",
+          "value": ";"
+        }
+      ]
+    },
+    "user_defined_variable": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "var."
+        },
+        {
+          "type": "FIELD",
+          "name": "name",
+          "content": {
+            "type": "SYMBOL",
+            "name": "identifier"
+          }
         }
       ]
     }
