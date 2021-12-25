@@ -142,6 +142,10 @@
         {
           "type": "SYMBOL",
           "name": "restart_statement"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "esi_statement"
         }
       ]
     },
@@ -260,6 +264,19 @@
         {
           "type": "STRING",
           "value": "restart"
+        },
+        {
+          "type": "STRING",
+          "value": ";"
+        }
+      ]
+    },
+    "esi_statement": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "esi"
         },
         {
           "type": "STRING",
