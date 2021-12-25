@@ -37,6 +37,21 @@ module.exports = grammar({
           'deliver'
         ),
 
+        type: $ => choice(
+          'ACL',
+          'BACKEND',
+          'BOOL',
+          'FLOAT',
+          'ID',
+          'INTEGER',
+          'IP',
+          'RTIME',
+          'STRING',
+          'TIME'
+        ),
+
+        declare_scope: $ => 'local',
+
         statement_block: $ => prec.right(seq(
           '{',
           optional(repeat($._statement)),
@@ -47,7 +62,8 @@ module.exports = grammar({
           $.return_statement,
           $.error_statement,
           $.restart_statement,
-          $.esi_statement
+          $.esi_statement,
+          $.declare_statement
         ),
 
         include_statement: $ => seq(
@@ -83,6 +99,19 @@ module.exports = grammar({
         esi_statement: $ => seq(
           'esi',
           ';'
+        ),
+
+        declare_statement: $ => seq(
+          'declare',
+          field('scope', $.declare_scope),
+          $.user_defined_variable,
+          field('type', $.type),
+          ';'
+        ),
+
+        user_defined_variable: $ => seq(
+          'var.',
+          field('name', $.identifier)
         ),
     }
 })
