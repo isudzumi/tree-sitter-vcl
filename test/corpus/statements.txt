@@ -74,3 +74,19 @@ sub vcl_fetch {
         message: (string
           (string_fragment))))))
 
+==================
+Restart
+==================
+
+sub vcl_fetch {
+  restart;
+}
+
+---
+
+(program
+  (subroutine
+    name: (identifier)
+    (statement_block
+      (restart_statement))))
+
