@@ -5,15 +5,10 @@
     "fields": {}
   },
   {
-    "type": "builtin_action",
-    "named": true,
-    "fields": {}
-  },
-  {
-    "type": "include",
+    "type": "include_statement",
     "named": true,
     "fields": {
-      "filename": {
+      "source": {
         "multiple": false,
         "required": true,
         "types": [
@@ -34,7 +29,7 @@
       "required": false,
       "types": [
         {
-          "type": "include",
+          "type": "include_statement",
           "named": true
         },
         {
@@ -77,7 +72,17 @@
   {
     "type": "string",
     "named": true,
-    "fields": {}
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "string_fragment",
+          "named": true
+        }
+      ]
+    }
   },
   {
     "type": "subroutine",
@@ -88,7 +93,7 @@
         "required": true,
         "types": [
           {
-            "type": "builtin_action",
+            "type": "identifier",
             "named": true
           }
         ]
@@ -130,6 +135,10 @@
     "named": false
   },
   {
+    "type": "identifier",
+    "named": true
+  },
+  {
     "type": "include",
     "named": false
   },
@@ -150,43 +159,11 @@
     "named": false
   },
   {
+    "type": "string_fragment",
+    "named": true
+  },
+  {
     "type": "sub",
-    "named": false
-  },
-  {
-    "type": "vcl_deliver",
-    "named": false
-  },
-  {
-    "type": "vcl_error",
-    "named": false
-  },
-  {
-    "type": "vcl_fetch",
-    "named": false
-  },
-  {
-    "type": "vcl_hash",
-    "named": false
-  },
-  {
-    "type": "vcl_hit",
-    "named": false
-  },
-  {
-    "type": "vcl_miss",
-    "named": false
-  },
-  {
-    "type": "vcl_pass",
-    "named": false
-  },
-  {
-    "type": "vcl_pipe",
-    "named": false
-  },
-  {
-    "type": "vcl_purge",
     "named": false
   },
   {

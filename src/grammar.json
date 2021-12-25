@@ -17,7 +17,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "include"
+          "name": "include_statement"
         }
       ]
     },
@@ -33,7 +33,7 @@
           "name": "name",
           "content": {
             "type": "SYMBOL",
-            "name": "builtin_action"
+            "name": "identifier"
           }
         },
         {
@@ -42,9 +42,13 @@
         }
       ]
     },
-    "_identifier": {
+    "identifier": {
       "type": "PATTERN",
-      "value": "[a-z_\\.]+"
+      "value": "\\w+"
+    },
+    "string_fragment": {
+      "type": "PATTERN",
+      "value": "[\\w\\.\\\\\\s]+"
     },
     "string": {
       "type": "SEQ",
@@ -55,52 +59,11 @@
         },
         {
           "type": "SYMBOL",
-          "name": "_identifier"
+          "name": "string_fragment"
         },
         {
           "type": "STRING",
           "value": "\""
-        }
-      ]
-    },
-    "builtin_action": {
-      "type": "CHOICE",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "vcl_fetch"
-        },
-        {
-          "type": "STRING",
-          "value": "vcl_hash"
-        },
-        {
-          "type": "STRING",
-          "value": "vcl_hit"
-        },
-        {
-          "type": "STRING",
-          "value": "vcl_pass"
-        },
-        {
-          "type": "STRING",
-          "value": "vcl_purge"
-        },
-        {
-          "type": "STRING",
-          "value": "vcl_pipe"
-        },
-        {
-          "type": "STRING",
-          "value": "vcl_miss"
-        },
-        {
-          "type": "STRING",
-          "value": "vcl_deliver"
-        },
-        {
-          "type": "STRING",
-          "value": "vcl_error"
         }
       ]
     },
@@ -158,7 +121,7 @@
         ]
       }
     },
-    "include": {
+    "include_statement": {
       "type": "SEQ",
       "members": [
         {
@@ -167,7 +130,7 @@
         },
         {
           "type": "FIELD",
-          "name": "filename",
+          "name": "source",
           "content": {
             "type": "SYMBOL",
             "name": "string"
