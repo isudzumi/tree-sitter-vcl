@@ -46,7 +46,8 @@ module.exports = grammar({
         _statement: $ => choice(
           $.return_statement,
           $.error_statement,
-          $.restart_statement
+          $.restart_statement,
+          $.esi_statement
         ),
 
         include_statement: $ => seq(
@@ -76,6 +77,11 @@ module.exports = grammar({
 
         restart_statement: $ => seq(
           'restart',
+          ';'
+        ),
+
+        esi_statement: $ => seq(
+          'esi',
           ';'
         ),
     }
