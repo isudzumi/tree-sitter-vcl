@@ -90,3 +90,19 @@ sub vcl_fetch {
     (statement_block
       (restart_statement))))
 
+==================
+ESI
+==================
+
+sub vcl_fetch {
+  esi;
+}
+
+---
+
+(program
+  (subroutine
+    name: (identifier)
+    (statement_block
+      (esi_statement))))
+
