@@ -5,6 +5,32 @@
     "fields": {}
   },
   {
+    "type": "error_statement",
+    "named": true,
+    "fields": {
+      "message": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "string",
+            "named": true
+          }
+        ]
+      },
+      "status": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "status_code",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "include_statement",
     "named": true,
     "fields": {
@@ -59,9 +85,13 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": false,
+      "multiple": true,
       "required": false,
       "types": [
+        {
+          "type": "error_statement",
+          "named": true
+        },
         {
           "type": "return_statement",
           "named": true
@@ -131,6 +161,10 @@
     "named": false
   },
   {
+    "type": "error",
+    "named": false
+  },
+  {
     "type": "hit_for_pass",
     "named": false
   },
@@ -157,6 +191,10 @@
   {
     "type": "return",
     "named": false
+  },
+  {
+    "type": "status_code",
+    "named": true
   },
   {
     "type": "string_fragment",
