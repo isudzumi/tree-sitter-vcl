@@ -16,9 +16,11 @@ module.exports = grammar({
 
         _identifier: $ => /[a-z_\.]+/,
 
+        string_fragment: $ => /[^\t\r\n\v\f\0]+/,
+
         string: $ => seq(
           '"',
-          $._identifier,
+          $.string_fragment,
           '"'
         ),
 
