@@ -10,30 +10,18 @@ module.exports = grammar({
 
         subroutine: $ => seq(
           'sub',
-          field('name', $.builtin_action),
+          field('name', $.identifier),
           $.statement_block
         ),
 
-        _identifier: $ => /[a-z_\.]+/,
+        identifier: $ => /\w+/,
 
-        string_fragment: $ => /[^\t\r\n\v\f\0]+/,
+        string_fragment: $ => /[\w\.\\\s]+/,
 
         string: $ => seq(
           '"',
           $.string_fragment,
           '"'
-        ),
-
-        builtin_action: $ => choice(
-          'vcl_fetch',
-          'vcl_hash',
-          'vcl_hit',
-          'vcl_pass',
-          'vcl_purge',
-          'vcl_pipe',
-          'vcl_miss',
-          'vcl_deliver',
-          'vcl_error'
         ),
 
         /**
