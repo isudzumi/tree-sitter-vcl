@@ -65,7 +65,8 @@ module.exports = grammar({
           $.restart_statement,
           $.esi_statement,
           $.declare_statement,
-          $.call_statement
+          $.call_statement,
+          $.synthetic_statement
         ),
 
         include_statement: $ => seq(
@@ -119,6 +120,12 @@ module.exports = grammar({
         call_statement: $ => seq(
           'call',
           field('subroutine_name', $.identifier),
+          ';'
+        ),
+
+        synthetic_statement: $ => seq(
+          'synthetic',
+          $.string,
           ';'
         ),
     }
