@@ -161,4 +161,21 @@ sub vcl_fetch {
         (string
           (string_fragment))))))
 
+==================
+Synthetic.base64
+==================
+
+sub vcl_fetch {
+  synthetic "User-Agent: ExampleBot";
+}
+
+---
+
+(program
+  (subroutine
+    name: (identifier)
+    (statement_block
+      (synthetic_statement
+        (string
+          (string_fragment))))))
 
