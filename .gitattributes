@@ -1,0 +1,3 @@
+bindings/** linguist-generated
+src/** linguist-generated
+test/corpus/** linguist-language=vcl
