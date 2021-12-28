@@ -1,3 +1,4 @@
 bindings/** linguist-generated
 src/** linguist-generated
+binding.gyp linguist-generated
 test/corpus/** linguist-language=vcl
