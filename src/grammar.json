@@ -207,6 +207,10 @@
         {
           "type": "SYMBOL",
           "name": "synthetic_statement"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "synthetic_base64_statement"
         }
       ]
     },
@@ -432,6 +436,15 @@
           "value": ";"
         }
       ]
+    },
+    "synthetic_base64_statement": {
+      "type": "ALIAS",
+      "content": {
+        "type": "STRING",
+        "value": "synthetic.base64"
+      },
+      "named": true,
+      "value": "synthetic_statement"
     }
   },
   "extras": [

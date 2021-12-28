@@ -175,6 +175,10 @@
           "named": true
         },
         {
+          "type": "synthetic_base64_statement",
+          "named": true
+        },
+        {
           "type": "synthetic_statement",
           "named": true
         }
@@ -223,12 +227,27 @@
     }
   },
   {
-    "type": "synthetic_statement",
+    "type": "synthetic_base64_statement",
     "named": true,
     "fields": {},
     "children": {
       "multiple": false,
       "required": true,
+      "types": [
+        {
+          "type": "synthetic_statement",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "synthetic_statement",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": false,
       "types": [
         {
           "type": "string",
