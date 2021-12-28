@@ -1,3 +1,4 @@
+
 module.exports = grammar({
     name: 'vcl',
     rules: {
