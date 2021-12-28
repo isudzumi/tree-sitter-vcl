@@ -66,7 +66,8 @@ module.exports = grammar({
           $.esi_statement,
           $.declare_statement,
           $.call_statement,
-          $.synthetic_statement
+          $.synthetic_statement,
+          $.synthetic_base64_statement
         ),
 
         include_statement: $ => seq(
@@ -127,6 +128,11 @@ module.exports = grammar({
           'synthetic',
           $.string,
           ';'
+        ),
+
+        synthetic_base64_statement: $ => alias(
+          'synthetic.base64',
+          $.synthetic_statement
         ),
     }
 })
