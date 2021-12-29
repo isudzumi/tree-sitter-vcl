@@ -155,6 +155,10 @@
           "named": true
         },
         {
+          "type": "comment",
+          "named": true
+        },
+        {
           "type": "declare_statement",
           "named": true
         },
@@ -336,6 +340,10 @@
   {
     "type": "call",
     "named": false
+  },
+  {
+    "type": "comment",
+    "named": true
   },
   {
     "type": "declare",
