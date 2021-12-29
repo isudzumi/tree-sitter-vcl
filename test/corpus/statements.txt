@@ -179,3 +179,25 @@ sub vcl_fetch {
         (string
           (string_fragment))))))
 
+==================
+Comments
+==================
+
+sub vcl_fetch {
+  // Single line of out-commented VCL.
+  # Another way of commenting out a single line.
+  /*
+    Multi-line block of commented-out VCL.
+  */
+}
+
+---
+
+(program
+  (subroutine
+    name: (identifier)
+    (statement_block
+      (comment)
+      (comment)
+      (comment))))
+
