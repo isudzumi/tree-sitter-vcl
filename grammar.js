@@ -67,7 +67,8 @@ module.exports = grammar({
           $.declare_statement,
           $.call_statement,
           $.synthetic_statement,
-          $.synthetic_base64_statement
+          $.synthetic_base64_statement,
+          $.comment
         ),
 
         include_statement: $ => seq(
@@ -134,5 +135,16 @@ module.exports = grammar({
           'synthetic.base64',
           $.synthetic_statement
         ),
+
+        comment: $ => token(choice(
+          seq('//', /.*/),
+          seq('#', /.*/),
+          seq(
+            '/*',
+            // https://stackoverflow.com/a/36328890
+            /[^*]*\*+([^/*][^*]*\*+)*/,
+            '/'
+          )
+        )),
     }
 })
