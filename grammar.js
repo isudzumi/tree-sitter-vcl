@@ -115,7 +115,8 @@ module.exports = grammar({
         ),
 
         user_defined_variable: $ => seq(
-          'var.',
+          'var',
+          '.',
           field('name', $.identifier)
         ),
 
