@@ -1,14 +1,14 @@
 
 (comment) @comment
 
-(statement_block) @punctuation.bracket
+(identifier) @variable
 
 (include_statement) @include
-(return_statement
-  (action) @parameter.reference) @keyword.return
+(return_statement) @keyword.return
+(action) @parameter.reference
 
 (subroutine
-  name: (identifier) @function) @keyword.function
+  name: (identifier) @function)
 
 (string) @string
 
@@ -18,11 +18,25 @@
 
 (type) @type.builtin
 
-(declare_statement) @keyword
+"var" @variable.builtin
 
-(declare_scope) @keyword
+[
+  ";"
+  "."
+] @punctuation.delimiter
 
-(user_defined_variable
-  name: (identifier) @variable) @property
+[
+  "{"
+  "}"
+  "("
+  ")"
+] @punctuation.bracket
 
-";" @punctuation.delimiter
+[
+  "call"
+  "synthetic"
+  "sub"
+  "restart"
+  "esi"
+  "declare"
+] @keyword
