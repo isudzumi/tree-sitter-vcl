@@ -68,7 +68,8 @@ module.exports = grammar({
           $.call_statement,
           $.synthetic_statement,
           $.synthetic_base64_statement,
-          $.comment
+          $.comment,
+          $.set_statement
         ),
 
         include_statement: $ => seq(
@@ -147,5 +148,13 @@ module.exports = grammar({
             '/'
           )
         )),
+
+        set_statement: $ => seq(
+          'set',
+          $.user_defined_variable,
+          '=',
+          $.string,
+          ';'
+        ),
     }
 })
