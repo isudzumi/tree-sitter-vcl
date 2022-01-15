@@ -215,6 +215,10 @@
         {
           "type": "SYMBOL",
           "name": "comment"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "set_statement"
         }
       ]
     },
@@ -391,7 +395,11 @@
       "members": [
         {
           "type": "STRING",
-          "value": "var."
+          "value": "var"
+        },
+        {
+          "type": "STRING",
+          "value": "."
         },
         {
           "type": "FIELD",
@@ -500,6 +508,31 @@
           }
         ]
       }
+    },
+    "set_statement": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "set"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "user_defined_variable"
+        },
+        {
+          "type": "STRING",
+          "value": "="
+        },
+        {
+          "type": "SYMBOL",
+          "name": "string"
+        },
+        {
+          "type": "STRING",
+          "value": ";"
+        }
+      ]
     }
   },
   "extras": [

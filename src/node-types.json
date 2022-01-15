@@ -143,6 +143,25 @@
     }
   },
   {
+    "type": "set_statement",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "user_defined_variable",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "statement_block",
     "named": true,
     "fields": {},
@@ -176,6 +195,10 @@
         },
         {
           "type": "return_statement",
+          "named": true
+        },
+        {
+          "type": "set_statement",
           "named": true
         },
         {
@@ -294,7 +317,15 @@
     "named": false
   },
   {
+    "type": ".",
+    "named": false
+  },
+  {
     "type": ";",
+    "named": false
+  },
+  {
+    "type": "=",
     "named": false
   },
   {
@@ -398,6 +429,10 @@
     "named": false
   },
   {
+    "type": "set",
+    "named": false
+  },
+  {
     "type": "status_code",
     "named": true
   },
@@ -414,7 +449,7 @@
     "named": false
   },
   {
-    "type": "var.",
+    "type": "var",
     "named": false
   },
   {
