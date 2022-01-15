@@ -201,3 +201,29 @@ sub vcl_fetch {
       (comment)
       (comment))))
 
+==================
+Set
+==================
+
+sub vcl_fetch {
+  declare local var.foo STRING;
+  set var.foo = "foobar";
+}
+
+---
+
+(program
+  (subroutine
+    name: (identifier)
+    (statement_block
+      (declare_statement
+        scope: (declare_scope)
+        (user_defined_variable
+          name: (identifier))
+          type: (type))
+      (set_statement
+        (user_defined_variable
+          name: (identifier))
+        (string
+          (string_fragment))))))
+
