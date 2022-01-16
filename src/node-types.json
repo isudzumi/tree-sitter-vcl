@@ -157,6 +157,10 @@
         {
           "type": "user_defined_variable",
           "named": true
+        },
+        {
+          "type": "vcl_variable",
+          "named": true
         }
       ]
     }
@@ -305,6 +309,47 @@
     }
   },
   {
+    "type": "vcl_scope",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "vcl_variable",
+    "named": true,
+    "fields": {
+      "index": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "scope": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "vcl_scope",
+            "named": true
+          }
+        ]
+      },
+      "variable": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "\"",
     "named": false
   },
@@ -369,6 +414,14 @@
     "named": false
   },
   {
+    "type": "bereq",
+    "named": false
+  },
+  {
+    "type": "beresp",
+    "named": false
+  },
+  {
     "type": "call",
     "named": false
   },
@@ -413,11 +466,23 @@
     "named": false
   },
   {
+    "type": "obj",
+    "named": false
+  },
+  {
     "type": "pass",
     "named": false
   },
   {
     "type": "pipe",
+    "named": false
+  },
+  {
+    "type": "req",
+    "named": false
+  },
+  {
+    "type": "resp",
     "named": false
   },
   {
