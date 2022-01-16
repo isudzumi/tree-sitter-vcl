@@ -208,6 +208,8 @@ Set
 sub vcl_fetch {
   declare local var.foo STRING;
   set var.foo = "foobar";
+
+  set req.http.FOO = "bar";
 }
 
 ---
@@ -224,6 +226,13 @@ sub vcl_fetch {
       (set_statement
         (user_defined_variable
           name: (identifier))
+        (string
+          (string_fragment)))
+      (set_statement
+        (vcl_variable
+          scope: (vcl_scope)
+          variable: (identifier)
+          index: (identifier))
         (string
           (string_fragment))))))
 
