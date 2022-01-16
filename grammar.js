@@ -15,7 +15,7 @@ module.exports = grammar({
           $.statement_block
         ),
 
-        identifier: $ => /\w+/,
+        identifier: $ => /[\w\-]+/,
 
         string_fragment: $ => /[:\w\s\.\-\\]+/,
 
@@ -151,10 +151,32 @@ module.exports = grammar({
 
         set_statement: $ => seq(
           'set',
-          $.user_defined_variable,
+          choice(
+            $.user_defined_variable,
+            $.vcl_variable
+          ),
           '=',
           $.string,
           ';'
+        ),
+
+        vcl_scope: $ => choice(
+          'req',
+          'bereq',
+          'beresp',
+          'resp',
+          'obj'
+        ),
+
+        vcl_variable: $ => seq(
+          field('scope', $.vcl_scope),
+          '.',
+          field('variable', $.identifier),
+          optional(
+            seq(
+            '.',
+            field('index', $.identifier)
+          )),
         ),
     }
 })
