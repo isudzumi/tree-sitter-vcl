@@ -18,6 +18,13 @@
 
 (type) @type.builtin
 
+(vcl_scope) @variable.builtin
+
+(vcl_variable
+  scope: (vcl_scope) @variable.builtin
+  variable: (identifier) @property
+  index: (identifier) @variable)
+
 "var" @variable.builtin
 
 [
@@ -33,10 +40,15 @@
 ] @punctuation.bracket
 
 [
+  "="
+] @operator
+
+[
   "call"
   "synthetic"
   "sub"
   "restart"
   "esi"
   "declare"
+  "set"
 ] @keyword
