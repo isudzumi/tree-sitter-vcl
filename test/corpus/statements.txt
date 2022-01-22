@@ -210,6 +210,7 @@ sub vcl_fetch {
   set var.foo = "foobar";
 
   set req.http.FOO = "bar";
+  set req.http.Cache-Control:private = "";
 }
 
 ---
@@ -234,5 +235,12 @@ sub vcl_fetch {
           variable: (identifier)
           index: (identifier))
         (string
-          (string_fragment))))))
+          (string_fragment)))
+      (set_statement
+        (vcl_variable
+          scope: (vcl_scope)
+          variable: (identifier)
+          index: (identifier)
+          subfield: (identifier))
+        (string)))))
 
