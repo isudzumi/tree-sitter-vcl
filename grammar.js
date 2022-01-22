@@ -23,7 +23,7 @@ module.exports = grammar({
 
         string: $ => seq(
           '"',
-          $.string_fragment,
+          optional($.string_fragment),
           '"'
         ),
 
