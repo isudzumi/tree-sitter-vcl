@@ -244,3 +244,23 @@ sub vcl_fetch {
           subfield: (identifier))
         (string)))))
 
+==================
+Unset
+==================
+
+sub vcl_fetch {
+  unset req.http.FOO;
+}
+
+---
+
+(program
+  (subroutine
+    name: (identifier)
+    (statement_block
+      (unset_statement
+        (vcl_variable
+          scope: (vcl_scope)
+          variable: (identifier)
+          index: (identifier))))))
+
