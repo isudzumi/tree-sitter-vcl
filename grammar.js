@@ -175,7 +175,12 @@ module.exports = grammar({
           optional(
             seq(
             '.',
-            field('index', $.identifier)
+            field('index', $.identifier),
+          )),
+          optional(
+            seq(
+            ':',
+            field('subfield', $.identifier),
           )),
         ),
     }
