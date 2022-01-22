@@ -69,7 +69,8 @@ module.exports = grammar({
           $.synthetic_statement,
           $.synthetic_base64_statement,
           $.comment,
-          $.set_statement
+          $.set_statement,
+          $.unset_statement
         ),
 
         include_statement: $ => seq(
@@ -157,6 +158,14 @@ module.exports = grammar({
           ),
           '=',
           $.string,
+          ';'
+        ),
+
+        unset_statement: $ => seq(
+          'unset',
+          choice(
+            $.vcl_variable
+          ),
           ';'
         ),
 
