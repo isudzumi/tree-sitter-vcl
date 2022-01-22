@@ -62,8 +62,16 @@
           "value": "\""
         },
         {
-          "type": "SYMBOL",
-          "name": "string_fragment"
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "string_fragment"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
         },
         {
           "type": "STRING",
@@ -604,6 +612,31 @@
                 {
                   "type": "FIELD",
                   "name": "index",
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "identifier"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "STRING",
+                  "value": ":"
+                },
+                {
+                  "type": "FIELD",
+                  "name": "subfield",
                   "content": {
                     "type": "SYMBOL",
                     "name": "identifier"
