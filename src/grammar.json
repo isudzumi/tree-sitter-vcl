@@ -227,6 +227,10 @@
         {
           "type": "SYMBOL",
           "name": "set_statement"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "unset_statement"
         }
       ]
     },
@@ -544,6 +548,28 @@
         {
           "type": "SYMBOL",
           "name": "string"
+        },
+        {
+          "type": "STRING",
+          "value": ";"
+        }
+      ]
+    },
+    "unset_statement": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "unset"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "vcl_variable"
+            }
+          ]
         },
         {
           "type": "STRING",
