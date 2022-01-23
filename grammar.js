@@ -6,7 +6,8 @@ module.exports = grammar({
 
         _definition: $ => choice(
           $.subroutine,
-          $.include_statement
+          $.include_statement,
+          $.backend_declaration,
         ),
 
         subroutine: $ => seq(
@@ -180,6 +181,24 @@ module.exports = grammar({
           'beresp',
           'resp',
           'obj'
+        ),
+
+        backend_attribute: $ => seq(
+          '.',
+          field('name', $.identifier),
+          '=',
+          $._expression,
+          ';'
+        ),
+
+        backend_declaration: $ => seq(
+          'backend',
+          field('name', $.identifier),
+          '{',
+          optional(
+            repeat($.backend_attribute)
+          ),
+          '}',
         ),
 
         vcl_variable: $ => seq(
