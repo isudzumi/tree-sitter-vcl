@@ -25,6 +25,12 @@
   variable: (identifier) @property
   index: (identifier) @variable)
 
+(backend_declaration
+  name: (identifier) @namespace)
+
+(backend_attribute
+  name: (identifier) @field)
+
 "var" @variable.builtin
 
 [
@@ -52,4 +58,5 @@
   "declare"
   "set"
   "unset"
+  "backend"
 ] @keyword
