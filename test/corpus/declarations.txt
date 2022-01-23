@@ -1,0 +1,67 @@
+==================
+Backend
+==================
+
+backend backend_name_0 {
+  .connect_timeout = 1s;
+  .dynamic = true;
+  .port = "443";
+  .host = "example.com";
+  .first_byte_timeout = 20s;
+  .max_connections = 500;
+  .between_bytes_timeout = 20s;
+  .share_key = "6FxweUD4BuxaP3diaJvYJXo";
+  .ssl = true;
+  .ssl_sni_hostname = "example.com";
+  .ssl_cert_hostname = "example.com";
+  .ssl_check_cert = always;
+}
+
+---
+
+(program
+  (backend_declaration
+    name: (identifier)
+    (backend_attribute
+      name: (identifier)
+      (identifier))
+    (backend_attribute
+      name: (identifier)
+      (identifier))
+    (backend_attribute
+      name: (identifier)
+      (string
+        (string_fragment)))
+    (backend_attribute
+      name: (identifier)
+      (string
+        (string_fragment)))
+    (backend_attribute
+      name: (identifier)
+      (identifier))
+    (backend_attribute
+      name: (identifier)
+      (identifier))
+    (backend_attribute
+      name: (identifier)
+      (identifier))
+    (backend_attribute
+      name: (identifier)
+      (string
+        (string_fragment)))
+    (backend_attribute
+      name: (identifier)
+      (identifier))
+    (backend_attribute
+      name: (identifier)
+      (string
+        (string_fragment)))
+    (backend_attribute
+      name: (identifier)
+      (string
+        (string_fragment)))
+    (backend_attribute
+      name: (identifier)
+      (identifier))))
+
+
