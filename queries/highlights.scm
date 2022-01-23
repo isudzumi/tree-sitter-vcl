@@ -51,4 +51,5 @@
   "esi"
   "declare"
   "set"
+  "unset"
 ] @keyword
