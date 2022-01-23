@@ -5,6 +5,62 @@
     "fields": {}
   },
   {
+    "type": "backend_attribute",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "backend_declaration",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "backend_attribute",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "call_statement",
     "named": true,
     "fields": {
@@ -111,6 +167,10 @@
       "multiple": true,
       "required": false,
       "types": [
+        {
+          "type": "backend_declaration",
+          "named": true
+        },
         {
           "type": "include_statement",
           "named": true
@@ -448,6 +508,10 @@
   },
   {
     "type": "TIME",
+    "named": false
+  },
+  {
+    "type": "backend",
     "named": false
   },
   {
