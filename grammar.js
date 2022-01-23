@@ -73,6 +73,10 @@ module.exports = grammar({
           $.unset_statement
         ),
 
+        _expression: $ => choice(
+          $.string,
+        ),
+
         include_statement: $ => seq(
           'include',
           field('source', $.string),
@@ -157,7 +161,7 @@ module.exports = grammar({
             $.vcl_variable
           ),
           '=',
-          $.string,
+          $._expression,
           ';'
         ),
 
