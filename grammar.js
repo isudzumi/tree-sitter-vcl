@@ -19,7 +19,7 @@ module.exports = grammar({
 
         string_fragment: $ => /[:\w\s\.\-\\]+/,
 
-        status_code: $ => /\d+/,
+        status_code: $ => /\d{3}/,
 
         string: $ => seq(
           '"',
