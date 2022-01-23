@@ -211,6 +211,7 @@ sub vcl_fetch {
 
   set req.http.FOO = "bar";
   set req.http.Cache-Control:private = "";
+  set req.backend = origin_0;
 }
 
 ---
@@ -242,7 +243,12 @@ sub vcl_fetch {
           variable: (identifier)
           index: (identifier)
           subfield: (identifier))
-        (string)))))
+        (string))
+      (set_statement
+        (vcl_variable
+          scope: (vcl_scope)
+          variable: (identifier))
+        (identifier)))))
 
 ==================
 Unset
