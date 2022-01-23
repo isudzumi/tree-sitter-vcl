@@ -75,6 +75,7 @@ module.exports = grammar({
 
         _expression: $ => choice(
           $.string,
+          $.identifier,
         ),
 
         include_statement: $ => seq(
