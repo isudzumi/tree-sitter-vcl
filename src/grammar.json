@@ -234,6 +234,19 @@
         }
       ]
     },
+    "_expression": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "string"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "identifier"
+        }
+      ]
+    },
     "include_statement": {
       "type": "SEQ",
       "members": [
@@ -547,7 +560,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "string"
+          "name": "_expression"
         },
         {
           "type": "STRING",
