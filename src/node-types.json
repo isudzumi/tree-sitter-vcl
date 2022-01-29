@@ -24,11 +24,23 @@
       "required": true,
       "types": [
         {
+          "type": "false",
+          "named": true
+        },
+        {
           "type": "identifier",
           "named": true
         },
         {
+          "type": "number",
+          "named": true
+        },
+        {
           "type": "string",
+          "named": true
+        },
+        {
+          "type": "true",
           "named": true
         }
       ]
@@ -131,7 +143,7 @@
         "required": false,
         "types": [
           {
-            "type": "status_code",
+            "type": "number",
             "named": true
           }
         ]
@@ -211,11 +223,23 @@
       "required": true,
       "types": [
         {
+          "type": "false",
+          "named": true
+        },
+        {
           "type": "identifier",
           "named": true
         },
         {
+          "type": "number",
+          "named": true
+        },
+        {
           "type": "string",
+          "named": true
+        },
+        {
+          "type": "true",
           "named": true
         },
         {
@@ -551,6 +575,10 @@
     "named": false
   },
   {
+    "type": "false",
+    "named": true
+  },
+  {
     "type": "hit_for_pass",
     "named": false
   },
@@ -565,6 +593,10 @@
   {
     "type": "lookup",
     "named": false
+  },
+  {
+    "type": "number",
+    "named": true
   },
   {
     "type": "obj",
@@ -599,10 +631,6 @@
     "named": false
   },
   {
-    "type": "status_code",
-    "named": true
-  },
-  {
     "type": "string_fragment",
     "named": true
   },
@@ -613,6 +641,10 @@
   {
     "type": "synthetic",
     "named": false
+  },
+  {
+    "type": "true",
+    "named": true
   },
   {
     "type": "unset",

@@ -46,6 +46,10 @@
         }
       ]
     },
+    "number": {
+      "type": "PATTERN",
+      "value": "\\d+"
+    },
     "identifier": {
       "type": "PATTERN",
       "value": "[\\w\\-]+"
@@ -54,9 +58,13 @@
       "type": "PATTERN",
       "value": "[:\\w\\s\\.\\-\\\\]+"
     },
-    "status_code": {
-      "type": "PATTERN",
-      "value": "\\d{3}"
+    "true": {
+      "type": "STRING",
+      "value": "true"
+    },
+    "false": {
+      "type": "STRING",
+      "value": "false"
     },
     "string": {
       "type": "SEQ",
@@ -243,6 +251,18 @@
       "members": [
         {
           "type": "SYMBOL",
+          "name": "number"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "true"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "false"
+        },
+        {
+          "type": "SYMBOL",
           "name": "string"
         },
         {
@@ -328,7 +348,7 @@
                   "name": "status",
                   "content": {
                     "type": "SYMBOL",
-                    "name": "status_code"
+                    "name": "number"
                   }
                 },
                 {
