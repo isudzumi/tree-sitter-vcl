@@ -16,11 +16,15 @@ module.exports = grammar({
           $.statement_block
         ),
 
+        number: $ => /\d+/,
+
         identifier: $ => /[\w\-]+/,
 
         string_fragment: $ => /[:\w\s\.\-\\]+/,
 
-        status_code: $ => /\d{3}/,
+        true: $ => 'true',
+
+        false: $ => 'false',
 
         string: $ => seq(
           '"',
@@ -75,6 +79,9 @@ module.exports = grammar({
         ),
 
         _expression: $ => choice(
+          $.number,
+          $.true,
+          $.false,
           $.string,
           $.identifier,
         ),
@@ -97,7 +104,7 @@ module.exports = grammar({
           'error',
           optional(
             seq(
-              field('status', $.status_code),
+              field('status', $.number),
               optional(field('message', $.string))
             )
           ),
