@@ -14,7 +14,7 @@
 
 (error_statement) @exception
 
-(status_code) @number
+(number) @number
 
 (type) @type.builtin
 
@@ -32,6 +32,11 @@
   name: (identifier) @field)
 
 "var" @variable.builtin
+
+[
+  (true)
+  (false)
+] @boolean
 
 [
   ";"
