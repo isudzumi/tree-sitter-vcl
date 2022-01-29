@@ -27,7 +27,7 @@ backend backend_name_0 {
       (identifier))
     (backend_attribute
       name: (identifier)
-      (identifier))
+      (true))
     (backend_attribute
       name: (identifier)
       (string
@@ -51,7 +51,7 @@ backend backend_name_0 {
         (string_fragment)))
     (backend_attribute
       name: (identifier)
-      (identifier))
+      (true))
     (backend_attribute
       name: (identifier)
       (string
