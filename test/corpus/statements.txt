@@ -68,9 +68,9 @@ sub vcl_fetch {
     (statement_block
       (error_statement)
       (error_statement
-        status: (status_code))
+        status: (number))
       (error_statement
-        status: (status_code)
+        status: (number)
         message: (string
           (string_fragment))))))
 

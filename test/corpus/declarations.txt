@@ -41,7 +41,7 @@ backend backend_name_0 {
       (identifier))
     (backend_attribute
       name: (identifier)
-      (identifier))
+      (number))
     (backend_attribute
       name: (identifier)
       (identifier))
