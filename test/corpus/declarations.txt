@@ -64,4 +64,49 @@ backend backend_name_0 {
       name: (identifier)
       (identifier))))
 
+==================
+Director
+==================
+
+director director_name_0 random {
+  .quoram = 50%;
+  .retries = 3;
+  { .backend = F_backend1; .weight = 2; }
+  { .backend = F_backend2; .weight = 1; }
+  { .backend = F_backend3; .weight = 1; }
+}
+
+---
+
+(program
+  (director_declaration
+    name: (identifier)
+    type: (identifier)
+    (backend_attribute
+      name: (identifier)
+      (identifier))
+    (backend_attribute
+      name: (identifier)
+      (number))
+    (backend_field
+      (backend_attribute
+        name: (identifier)
+        (identifier))
+      (backend_attribute
+        name: (identifier)
+        (identifier))
+    (backend_field
+      (backend_attribute
+        name: (identifier)
+        (identifier))
+      (backend_attribute
+        name: (identifier)
+        (identifier))
+    (backend_field
+      (backend_attribute
+        name: (identifier)
+        (identifier))
+      (backend_attribute
+        name: (identifier)
+        (identifier))))
 
