@@ -24,7 +24,7 @@ backend backend_name_0 {
     name: (identifier)
     (backend_attribute
       name: (identifier)
-      (identifier))
+      (rtime))
     (backend_attribute
       name: (identifier)
       (true))
@@ -38,13 +38,13 @@ backend backend_name_0 {
         (string_fragment)))
     (backend_attribute
       name: (identifier)
-      (identifier))
+      (rtime))
     (backend_attribute
       name: (identifier)
       (number))
     (backend_attribute
       name: (identifier)
-      (identifier))
+      (rtime))
     (backend_attribute
       name: (identifier)
       (string
