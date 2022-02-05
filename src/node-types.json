@@ -36,6 +36,10 @@
           "named": true
         },
         {
+          "type": "rtime",
+          "named": true
+        },
+        {
           "type": "string",
           "named": true
         },
@@ -232,6 +236,10 @@
         },
         {
           "type": "number",
+          "named": true
+        },
+        {
+          "type": "rtime",
           "named": true
         },
         {
@@ -625,6 +633,10 @@
   {
     "type": "return",
     "named": false
+  },
+  {
+    "type": "rtime",
+    "named": true
   },
   {
     "type": "set",
