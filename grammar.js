@@ -18,7 +18,10 @@ module.exports = grammar({
 
         number: $ => /\d+/,
 
-        rtime: $ => /\d+s/,
+        /**
+         * @see {@link https://developer.fastly.com/reference/vcl/types/rtime/}
+         */
+        rtime: $ => /\d+(ms|s|m|h|d|y)/,
 
         identifier: $ => /[\w\-]+/,
 
