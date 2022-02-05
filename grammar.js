@@ -18,6 +18,8 @@ module.exports = grammar({
 
         number: $ => /\d+/,
 
+        rtime: $ => /\d+s/,
+
         identifier: $ => /[\w\-]+/,
 
         string_fragment: $ => /[:\w\s\.\-\\]+/,
@@ -80,6 +82,7 @@ module.exports = grammar({
 
         _expression: $ => choice(
           $.number,
+          $.rtime,
           $.true,
           $.false,
           $.string,
