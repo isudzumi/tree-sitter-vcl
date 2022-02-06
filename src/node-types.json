@@ -77,6 +77,21 @@
     }
   },
   {
+    "type": "backend_field",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "backend_attribute",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "call_statement",
     "named": true,
     "fields": {
@@ -123,6 +138,46 @@
       "types": [
         {
           "type": "user_defined_variable",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "director_declaration",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "type": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "backend_attribute",
+          "named": true
+        },
+        {
+          "type": "backend_field",
           "named": true
         }
       ]
@@ -185,6 +240,10 @@
       "types": [
         {
           "type": "backend_declaration",
+          "named": true
+        },
+        {
+          "type": "director_declaration",
           "named": true
         },
         {
@@ -572,6 +631,10 @@
   },
   {
     "type": "deliver",
+    "named": false
+  },
+  {
+    "type": "director",
     "named": false
   },
   {

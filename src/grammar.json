@@ -22,6 +22,10 @@
         {
           "type": "SYMBOL",
           "name": "backend_declaration"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "director_declaration"
         }
       ]
     },
@@ -52,7 +56,7 @@
     },
     "rtime": {
       "type": "PATTERN",
-      "value": "\\d+s"
+      "value": "\\d+(ms|s|m|h|d|y)"
     },
     "identifier": {
       "type": "PATTERN",
@@ -703,6 +707,91 @@
               "content": {
                 "type": "SYMBOL",
                 "name": "backend_attribute"
+              }
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "STRING",
+          "value": "}"
+        }
+      ]
+    },
+    "backend_field": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "{"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "REPEAT",
+              "content": {
+                "type": "SYMBOL",
+                "name": "backend_attribute"
+              }
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "STRING",
+          "value": "}"
+        }
+      ]
+    },
+    "director_declaration": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "director"
+        },
+        {
+          "type": "FIELD",
+          "name": "name",
+          "content": {
+            "type": "SYMBOL",
+            "name": "identifier"
+          }
+        },
+        {
+          "type": "FIELD",
+          "name": "type",
+          "content": {
+            "type": "SYMBOL",
+            "name": "identifier"
+          }
+        },
+        {
+          "type": "STRING",
+          "value": "{"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "REPEAT",
+              "content": {
+                "type": "CHOICE",
+                "members": [
+                  {
+                    "type": "SYMBOL",
+                    "name": "backend_attribute"
+                  },
+                  {
+                    "type": "SYMBOL",
+                    "name": "backend_field"
+                  }
+                ]
               }
             },
             {
