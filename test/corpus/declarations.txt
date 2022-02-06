@@ -94,19 +94,19 @@ director director_name_0 random {
         (identifier))
       (backend_attribute
         name: (identifier)
-        (identifier))
+        (number)))
     (backend_field
       (backend_attribute
         name: (identifier)
         (identifier))
       (backend_attribute
         name: (identifier)
-        (identifier))
+        (number)))
     (backend_field
       (backend_attribute
         name: (identifier)
         (identifier))
       (backend_attribute
         name: (identifier)
-        (identifier))))
+        (number)))))
 
