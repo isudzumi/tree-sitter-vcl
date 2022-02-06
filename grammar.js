@@ -8,6 +8,7 @@ module.exports = grammar({
           $.subroutine,
           $.include_statement,
           $.backend_declaration,
+          $.director_declaration,
         ),
 
         subroutine: $ => seq(
@@ -210,6 +211,30 @@ module.exports = grammar({
           '{',
           optional(
             repeat($.backend_attribute)
+          ),
+          '}',
+        ),
+
+        backend_field: $ => seq(
+          '{',
+          optional(
+            repeat($.backend_attribute)
+          ),
+          '}',
+        ),
+
+        director_declaration: $ => seq(
+          'director',
+          field('name', $.identifier),
+          field('type', $.identifier),
+          '{',
+          optional(
+            repeat(
+              choice(
+                $.backend_attribute,
+                $.backend_field,
+              )
+            )
           ),
           '}',
         ),
