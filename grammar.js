@@ -24,6 +24,8 @@ module.exports = grammar({
          */
         rtime: $ => /\d+(ms|s|m|h|d|y)/,
 
+        percentage: $ => /\d+%/,
+
         identifier: $ => /[\w\-]+/,
 
         string_fragment: $ => /[:\w\s\.\-\\]+/,
@@ -87,6 +89,7 @@ module.exports = grammar({
         _expression: $ => choice(
           $.number,
           $.rtime,
+          $.percentage,
           $.true,
           $.false,
           $.string,
