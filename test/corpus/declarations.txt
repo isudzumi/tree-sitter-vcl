@@ -84,7 +84,7 @@ director director_name_0 random {
     type: (identifier)
     (backend_attribute
       name: (identifier)
-      (identifier))
+      (percentage))
     (backend_attribute
       name: (identifier)
       (number))
