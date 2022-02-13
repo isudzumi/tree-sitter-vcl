@@ -36,6 +36,10 @@
           "named": true
         },
         {
+          "type": "percentage",
+          "named": true
+        },
+        {
           "type": "rtime",
           "named": true
         },
@@ -295,6 +299,10 @@
         },
         {
           "type": "number",
+          "named": true
+        },
+        {
+          "type": "percentage",
           "named": true
         },
         {
@@ -676,6 +684,10 @@
   {
     "type": "pass",
     "named": false
+  },
+  {
+    "type": "percentage",
+    "named": true
   },
   {
     "type": "pipe",
