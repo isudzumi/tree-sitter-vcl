@@ -257,6 +257,10 @@
         {
           "type": "subroutine",
           "named": true
+        },
+        {
+          "type": "table_declaration",
+          "named": true
         }
       ]
     }
@@ -455,6 +459,115 @@
     }
   },
   {
+    "type": "table_declaration",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "type": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "table_record",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "table_key",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "table_record",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "table_key",
+          "named": true
+        },
+        {
+          "type": "table_value",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "table_value",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "false",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "percentage",
+          "named": true
+        },
+        {
+          "type": "rtime",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "true",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "type",
     "named": true,
     "fields": {}
@@ -551,6 +664,10 @@
   },
   {
     "type": ")",
+    "named": false
+  },
+  {
+    "type": ",",
     "named": false
   },
   {
@@ -727,6 +844,10 @@
   },
   {
     "type": "synthetic",
+    "named": false
+  },
+  {
+    "type": "table",
     "named": false
   },
   {

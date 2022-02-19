@@ -26,6 +26,10 @@
         {
           "type": "SYMBOL",
           "name": "director_declaration"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "table_declaration"
         }
       ]
     },
@@ -68,7 +72,7 @@
     },
     "string_fragment": {
       "type": "PATTERN",
-      "value": "[:\\w\\s\\.\\-\\\\]+"
+      "value": "[:\\w\\s\\.\\-\\/\\\\]+"
     },
     "true": {
       "type": "STRING",
@@ -800,6 +804,99 @@
                     "name": "backend_field"
                   }
                 ]
+              }
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "STRING",
+          "value": "}"
+        }
+      ]
+    },
+    "table_key": {
+      "type": "SYMBOL",
+      "name": "string"
+    },
+    "table_value": {
+      "type": "SYMBOL",
+      "name": "_expression"
+    },
+    "table_record": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "table_key"
+        },
+        {
+          "type": "STRING",
+          "value": ":"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "table_value"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "STRING",
+              "value": ","
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "table_declaration": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "table"
+        },
+        {
+          "type": "FIELD",
+          "name": "name",
+          "content": {
+            "type": "SYMBOL",
+            "name": "identifier"
+          }
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "FIELD",
+              "name": "type",
+              "content": {
+                "type": "SYMBOL",
+                "name": "identifier"
+              }
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "STRING",
+          "value": "{"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "REPEAT",
+              "content": {
+                "type": "SYMBOL",
+                "name": "table_record"
               }
             },
             {
