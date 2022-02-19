@@ -110,3 +110,59 @@ director director_name_0 random {
         name: (identifier)
         (number)))))
 
+==================
+Table
+==================
+
+table table_name {
+  "/old/path": "https://other.hostname/new/path",
+  "/another/path": "/new/path",
+}
+
+table routing_table BACKEND {
+  "a.example.com": b0,
+  "b.example.com": b1,
+  "c.example.com": b2,
+}
+
+---
+
+(program
+  (table_declaration
+    name: (identifier)
+    (table_record
+      (table_key
+        (string
+          (string_fragment)))
+      (table_value
+        (string
+          (string_fragment))))
+    (table_record
+      (table_key
+        (string
+          (string_fragment)))
+      (table_value
+        (string
+          (string_fragment)))))
+  (table_declaration
+    name: (identifier)
+    type: (identifier)
+      (table_record
+        (table_key
+          (string
+            (string_fragment)))
+        (table_value
+          (identifier)))
+      (table_record
+        (table_key
+          (string
+            (string_fragment)))
+        (table_value
+          (identifier)))
+      (table_record
+        (table_key
+          (string
+            (string_fragment)))
+        (table_value
+          (identifier)))))
+
