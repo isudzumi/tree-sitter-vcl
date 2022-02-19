@@ -28,7 +28,7 @@ module.exports = grammar({
 
         identifier: $ => /[\w\-]+/,
 
-        string_fragment: $ => /[:\w\s\.\-\\]+/,
+        string_fragment: $ => /[:\w\s\.\-\/\\]+/,
 
         true: $ => 'true',
 
