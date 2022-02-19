@@ -9,6 +9,7 @@ module.exports = grammar({
           $.include_statement,
           $.backend_declaration,
           $.director_declaration,
+          $.table_declaration,
         ),
 
         subroutine: $ => seq(
@@ -237,6 +238,32 @@ module.exports = grammar({
                 $.backend_attribute,
                 $.backend_field,
               )
+            )
+          ),
+          '}',
+        ),
+
+        table_key: $ => $.string,
+
+        table_value: $ => $._expression,
+
+        table_record: $ => seq(
+          $.table_key,
+          ':',
+          $.table_value,
+          optional(',')
+        ),
+
+        table_declaration: $ => seq(
+          'table',
+          field('name', $.identifier),
+          optional(
+            field('type', $.identifier)
+          ),
+          '{',
+          optional(
+            repeat(
+              $.table_record
             )
           ),
           '}',
