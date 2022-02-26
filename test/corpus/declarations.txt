@@ -166,3 +166,37 @@ table routing_table BACKEND {
         (table_value
           (identifier)))))
 
+==================
+ACL
+==================
+
+acl office_ip_ranges {
+  "192.0.2.0"/24;                              # internal office...
+  ! "192.0.2.12";                              # ... except for the vending machine
+  "198.51.100.4";                              # remote VPN office
+  "2001:db8:ffff:ffff:ffff:ffff:ffff:ffff";    # ipv6 address remote
+}
+
+---
+
+(program
+  (acl_declaration
+    name: (identifier)
+    (ip_address
+      (string
+        (string_fragment))
+      (routing_prefix))
+    (comment)
+    (ip_address
+      (negate_operator)
+      (string
+        (string_fragment))
+    (comment)
+    (ip_address
+      (string
+        (string_fragment))
+    (comment)
+    (ip_address
+      (string
+        (string_fragment))
+    (comment)))
