@@ -189,10 +189,10 @@ acl office_ip_ranges {
     (ip_address
       (negate_operator)
       (string
-        (string_fragment))
+        (string_fragment)))
     (ip_address
       (string
-        (string_fragment))
+        (string_fragment)))
     (ip_address
       (string
-        (string_fragment))))
+        (string_fragment)))))
