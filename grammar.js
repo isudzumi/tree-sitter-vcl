@@ -10,6 +10,7 @@ module.exports = grammar({
           $.backend_declaration,
           $.director_declaration,
           $.table_declaration,
+          $.acl_declaration,
         ),
 
         subroutine: $ => seq(
@@ -268,6 +269,30 @@ module.exports = grammar({
           ),
           '}',
         ),
+
+        negate_operator: $ => '!',
+
+        routing_prefix: $ => /\/\d{1,2}/,
+
+        ip_address: $ => seq(
+          optional($.negate_operator),
+          $.string,
+          optional($.routing_prefix),
+          ';'
+        ),
+
+        acl_declaration: $ => seq(
+          'acl',
+          field('name', $.identifier),
+          '{',
+          optional(
+            repeat(
+              $.ip_address
+            )
+          ),
+          '}',
+        ),
+
 
         vcl_variable: $ => seq(
           field('scope', $.vcl_scope),
