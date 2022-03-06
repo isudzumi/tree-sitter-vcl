@@ -1,5 +1,31 @@
 [
   {
+    "type": "acl_declaration",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "ip_address",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "action",
     "named": true,
     "fields": {}
@@ -235,6 +261,29 @@
     }
   },
   {
+    "type": "ip_address",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "negate_operator",
+          "named": true
+        },
+        {
+          "type": "routing_prefix",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "program",
     "named": true,
     "fields": {},
@@ -242,6 +291,10 @@
       "multiple": true,
       "required": false,
       "types": [
+        {
+          "type": "acl_declaration",
+          "named": true
+        },
         {
           "type": "backend_declaration",
           "named": true
@@ -727,6 +780,10 @@
     "named": false
   },
   {
+    "type": "acl",
+    "named": false
+  },
+  {
     "type": "backend",
     "named": false
   },
@@ -791,6 +848,10 @@
     "named": false
   },
   {
+    "type": "negate_operator",
+    "named": true
+  },
+  {
     "type": "number",
     "named": true
   },
@@ -825,6 +886,10 @@
   {
     "type": "return",
     "named": false
+  },
+  {
+    "type": "routing_prefix",
+    "named": true
   },
   {
     "type": "rtime",
