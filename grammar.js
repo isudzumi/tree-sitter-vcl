@@ -1,6 +1,9 @@
 
 module.exports = grammar({
     name: 'vcl',
+    extras: $ => [
+      $.comment,
+    ],
     rules: {
         program: $ => repeat($._definition),
 
