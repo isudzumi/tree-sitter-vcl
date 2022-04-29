@@ -3,6 +3,7 @@ module.exports = grammar({
     name: 'vcl',
     extras: $ => [
       $.comment,
+      /[\s\uFEFF\u2060\u200B]/,
     ],
     rules: {
         program: $ => repeat($._definition),
